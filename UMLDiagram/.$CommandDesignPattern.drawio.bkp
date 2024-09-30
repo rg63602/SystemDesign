@@ -1,0 +1,184 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram id="JgvCNIZ4o0CIp9dC3lPd" name="Page-1">
+    <mxGraphModel dx="1224" dy="2115" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-1" value="&lt;font&gt;Command Design Pattern : Undo/Redo functionality for text editor for each action typing and deleting&amp;nbsp;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="580" y="40" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-3" value="&lt;font&gt;1. Client : Creates object of Commands, associated with invoker.&lt;/font&gt;&lt;div&gt;&lt;div style=&quot;&quot;&gt;&lt;font&gt;2. Invoker : Invoker executes commands, undo from list of commands stack and redo pops commands from redoCommands stack.&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font&gt;3. Receiver : It holds string i.e. text, append operation and deletion operation.&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="160" y="-110" width="740" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-12" value="Receiver" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1000" y="440" width="160" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-13" value="+ text: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-12" vertex="1">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-12" vertex="1">
+          <mxGeometry y="52" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-15" value="+ getText(): String&lt;div&gt;+ appendText(String : text) : void&lt;/div&gt;&lt;div&gt;+ deleteText(int: len): String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-12" vertex="1">
+          <mxGeometry y="60" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-20" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Command&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ execute(Type): Type&lt;br&gt;+ undo(Type, Type): Type&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="750" y="70" width="190" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-21" value="Invoker" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="690" y="440" width="230" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-22" value="+ commandStack: Stack&amp;lt;Command&amp;gt;&lt;div&gt;+ redoStack: Stack&amp;lt;Command&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-21" vertex="1">
+          <mxGeometry y="26" width="230" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-23" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-21" vertex="1">
+          <mxGeometry y="80" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-24" value="+ execute(type): void&lt;div&gt;+ undo() : void&lt;/div&gt;&lt;div&gt;+ redo() : void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-21" vertex="1">
+          <mxGeometry y="88" width="230" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-25" value="Problem :&lt;br&gt;1. Lack of abstraction&lt;div&gt;2. Undo/Redo functionality&lt;/div&gt;&lt;div&gt;3. code maintenance&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="395" y="158" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-26" value="DeletingText" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="860" y="260" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-27" value="+ receiver: Receiver" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-26" vertex="1">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-28" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-26" vertex="1">
+          <mxGeometry y="52" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-29" value="+ execute(type): type&lt;div&gt;+ undo(type): type&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-26" vertex="1">
+          <mxGeometry y="60" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-30" value="AppendingText" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="630" y="260" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-31" value="+ receiver: Receiver" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-30" vertex="1">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-32" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-30" vertex="1">
+          <mxGeometry y="52" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-33" value="+ execute(type): type&lt;div&gt;+ undo(type): type&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-30" vertex="1">
+          <mxGeometry y="60" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-34" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.533;exitY=0.004;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;" parent="1" source="CkMQ2_74jHTQYo0HGbMf-30" target="CkMQ2_74jHTQYo0HGbMf-20" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="740" y="320" as="sourcePoint" />
+            <mxPoint x="900" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-35" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.533;exitY=-0.027;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=Comic Sans MS;labelBackgroundColor=none;fontColor=default;" parent="1" source="CkMQ2_74jHTQYo0HGbMf-26" target="CkMQ2_74jHTQYo0HGbMf-20" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="740" y="320" as="sourcePoint" />
+            <mxPoint x="900" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-43" value="Command Design Pattern :&amp;nbsp;&lt;div&gt;Problem :&amp;nbsp;&lt;br&gt;1. lack of abstraction&lt;/div&gt;&lt;div&gt;2. undo/redo functionality&lt;/div&gt;&lt;div&gt;3. difficulty to maintain code&amp;nbsp;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="260" y="650" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-45" value="Invoker: Execute commands, perform undo and redo operations" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="460" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=default;" parent="1" source="CkMQ2_74jHTQYo0HGbMf-46" target="CkMQ2_74jHTQYo0HGbMf-45" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-46" value="Client : Invoke commands, Associate with Invoker" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="275" y="790" width="105" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-47" value="Receiver : Act based on Invoker e.g. for text editor, append or delete and get current text etc.&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="630" y="790" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.007;entryY=0.378;entryDx=0;entryDy=0;entryPerimeter=0;labelBackgroundColor=none;fontColor=default;" parent="1" source="CkMQ2_74jHTQYo0HGbMf-45" target="CkMQ2_74jHTQYo0HGbMf-47" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-51" value="Main Method" style="html=1;whiteSpace=wrap;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="260" y="1249" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-60" value="Invoker" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="460" y="1230" width="270" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-61" value="+ commandsStack: Stack&amp;lt;Command&amp;gt;&lt;div&gt;+ redoStack : Stack&amp;lt;Command&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-60" vertex="1">
+          <mxGeometry y="26" width="270" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-62" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-60" vertex="1">
+          <mxGeometry y="80" width="270" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-63" value="+ execute(command): void&lt;div&gt;+ undo(): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ redo(): void&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-60" vertex="1">
+          <mxGeometry y="88" width="270" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-64" value="Receiver" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="810" y="1230" width="160" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-65" value="+ text: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-64" vertex="1">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-66" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-64" vertex="1">
+          <mxGeometry y="52" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-67" value="+ getText(): String&lt;div&gt;+ appendToText(String) : void&lt;/div&gt;&lt;div&gt;+ deleteText(int): void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-64" vertex="1">
+          <mxGeometry y="60" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-68" value="Client" style="html=1;whiteSpace=wrap;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="70" y="1169" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=default;" parent="1" source="CkMQ2_74jHTQYo0HGbMf-68" target="CkMQ2_74jHTQYo0HGbMf-71" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="190" y="1274" as="sourcePoint" />
+            <mxPoint x="285" y="1274" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=default;" parent="1" source="CkMQ2_74jHTQYo0HGbMf-71" target="CkMQ2_74jHTQYo0HGbMf-51" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-71" value="Interacts" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="205" y="1179" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-74" value="Problem Statement : Undo/Redo functionality for text while appending and deleting text." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="140" y="740" width="490" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-75" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Command&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ execute(Type): Type&lt;br&gt;+ undo(Type, Type): Type&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="440" y="880" width="190" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-76" value="AppendingText" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="330" y="1060" width="160" height="128" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-77" value="+ receiver: Receiver&lt;div&gt;+ text : String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-76" vertex="1">
+          <mxGeometry y="26" width="160" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-78" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-76" vertex="1">
+          <mxGeometry y="70" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-79" value="+ execute(): void&lt;div&gt;+ undo() : void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-76" vertex="1">
+          <mxGeometry y="78" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-80" value="DeletingText" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="560" y="1060" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-81" value="+ receiver: Receiver&lt;div&gt;+ text : String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-80" vertex="1">
+          <mxGeometry y="26" width="160" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-82" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-80" vertex="1">
+          <mxGeometry y="70" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-83" value="+ execute(): void&lt;div&gt;+ undo() : void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="CkMQ2_74jHTQYo0HGbMf-80" vertex="1">
+          <mxGeometry y="78" width="160" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-84" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;labelBackgroundColor=none;fontColor=default;" parent="1" source="CkMQ2_74jHTQYo0HGbMf-76" target="CkMQ2_74jHTQYo0HGbMf-75" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="420" y="1070" as="sourcePoint" />
+            <mxPoint x="580" y="1070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CkMQ2_74jHTQYo0HGbMf-85" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.546;entryY=1.003;entryDx=0;entryDy=0;exitX=0.439;exitY=0.017;exitDx=0;exitDy=0;entryPerimeter=0;exitPerimeter=0;labelBackgroundColor=none;fontColor=default;" parent="1" source="CkMQ2_74jHTQYo0HGbMf-80" target="CkMQ2_74jHTQYo0HGbMf-75" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="365" y="1070" as="sourcePoint" />
+            <mxPoint x="545" y="1030" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
